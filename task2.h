@@ -6,7 +6,6 @@ class Myintegerarray
 {
 private:
 	int* array;
-	int* sum;
 
 public:
 	Myintegerarray();
