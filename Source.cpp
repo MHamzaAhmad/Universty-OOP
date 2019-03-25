@@ -1,40 +1,92 @@
 #include <iostream>
-#include <string>
-#include "first test.h"
+#include "task2.h"
 using namespace std;
-
-// initializing with 0
-Point2d::Point2d()
+//default constructor
+Myintegerarray :: Myintegerarray()
 {
-	for (int i = 0; i < 2; i++)
+	array = new int[10];
+	for (int i = 0; i < 10; i++)
 	{
-		p1[i] = 0;
-		p2[i] = 0;
+		array[i] = 0;
 	}
 }
-Point2d::Point2d(int x, int y)
+// initializing array
+Myintegerarray::Myintegerarray(int x, int y)
 {
-	p1[0] = x;
-	p1[1] = y;
+	array = new int[x];
+	for (int i = 0; i < x; i++)
+	{
+		array[i] = 0;
+	}
+
 }
-void Point2d::setPoint(int x , int y)
+
+// setting user values
+void Myintegerarray::setvalue(int x, int y)
 {
-	p2[0] = x;
-	p2[1] = y;
-	
+	array[x] = y;
 }
-void Point2d::print()
+
+Myintegerarray Myintegerarray::add(Myintegerarray* a)
 {
-	cout << "(" << p2[0] << "," << p2[1] << ")" << endl;
+	sum = new int[10];
+	for (int i = 0; i < 10 ; i++)
+	{
+		this->array[i] = this->array[i] + a->array[i];
+	}
+	return *this;
 }
-int Point2d::calcuatedistance(const Point2d &o)
+
+// finding maximum
+Myintegerarray Myintegerarray :: findMaximum()
 {
-	double x1 = p1[0];
-	double x2 = p2[0];
-	double y1 = p1[1];
-	double y2 = p2[1];
-	double firstentity = x2 - x1;
-	double secondentity = y2 - y1;
-	double answer = pow(firstentity, 2) + pow(secondentity, 2);
-	return answer;
+	int max = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		if (i == 0)
+		{
+			max = this->array[i];
+		}
+		else if (this->array[i] >= max)
+		{
+			max = this->array[i];
+		}
+	}
+	cout << "The maximum number is: " << max << endl;
+	return *this;
 }
+
+//finding maximum
+
+Myintegerarray Myintegerarray:: findMinimum()
+{
+	int min = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		if (i == 0)
+		{
+			min = this->array[i];
+		}
+		else if (this->array[i] <= min)
+		{
+			min = this->array[i];
+		}
+	}
+	cout << "The minimum number is: " << min << endl;
+	return *this;
+}
+
+// Printing function here
+
+void Myintegerarray::print()
+{
+	cout << "The sum of array is: " << endl;
+	for (int i = 0; i < 10; i++)
+	{
+		cout << this->array[i] << " ";
+
+	}
+	cout << endl;
+}
+
+

@@ -31,10 +31,6 @@ int main()
 	Myintegerarray ptrintarray3;					//Creating third which will contain summ of the other two.
 	ptrintarray3 = ptrintarray1->add(ptrintarray2);
 
-	ptrintarray3.print();				//first printing the sum.
-
-	cout << "The maximum value is: " << ptrintarray3.findMaximum() << endl;		//printing maximum.
-
-	cout << "The minimum value is: " << ptrintarray3.findMinimum() << endl;		//printing minimum.
-
+	ptrintarray3.findMaximum().findMinimum().print();			//Printing array and maximum.
+																// Printing array and minimum.
 }

@@ -13,7 +13,7 @@ public:
 	Myintegerarray(int, int);
 	void setvalue(int, int);
 	Myintegerarray add(Myintegerarray* o);
-	int findMaximum();
-	int findMinimum();
+	Myintegerarray findMaximum();
+	Myintegerarray findMinimum();
 	void print();
 };
